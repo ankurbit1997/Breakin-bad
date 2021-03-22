@@ -22,18 +22,18 @@ const Index = () => {
 
   const navigate = pageNumber => setCurrentPage(pageNumber)
 
+  const fetchItems = async () => {
+    const result = await axios(
+      `https://www.breakingbadapi.com/api/characters?name=${query}`
+    )
+
+    setItems(result.data)
+    setIsLoading(false)
+  }
+
   useEffect(() => {
-    const fetchItems = async () => {
-      const result = await axios(
-        `https://www.breakingbadapi.com/api/characters?name=${query}`
-      )
-
-      console.log(result.data)
-      setItems(result.data)
-      setIsLoading(false)
-    }
-
     fetchItems()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [query])
 
   return (
