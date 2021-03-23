@@ -48,8 +48,8 @@
 }
 
 .image-container img {
-  width: 60%;
-  height: 60%;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
 }
 
@@ -123,6 +123,11 @@ footer ul {
 
   .image-container:hover {
     transform: scale(1);
+  }
+
+  .image-container img {
+    width: 120px;
+    height: 120px;
   }
 }
 

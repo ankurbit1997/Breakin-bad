@@ -1,24 +1,18 @@
-const fetch = require(`node-fetch`)
+const fetch = require('node-fetch');
+const path = require('path');
+exports.createPages = async ({ actions }) => {
+  const charTemplate = path.resolve(`${__dirname}/src/templates/Character.js`)
+  const res = await fetch('https://www.breakingbadapi.com/api/characters')
+  const data = await res.json()
 
-exports.sourceNodes = async ({
-  actions: { createNode },
-  createContentDigest,
-}) => {
-  // get data from API at build time
-  const result = await fetch(`https://www.breakingbadapi.com/api/characters`)
-  const resultData = await result.json()
-  // create node for build time data example in the docs
-  createNode({
-    // nameWithOwner and url are arbitrary fields from the data
-    nameWithOwner: resultData.full_name,
-    url: resultData.html_url,
-    // required fields
-    id: `example-build-time-data`,
-    parent: null,
-    children: [],
-    internal: {
-      type: `Example`,
-      contentDigest: createContentDigest(resultData),
-    },
-  })
+
+  data.forEach(char => {
+    actions.createPage({
+      path: `/character/${char.char_id}`,
+      component: charTemplate,
+      context: { char }
+    });
+  });
+
+  
 }
