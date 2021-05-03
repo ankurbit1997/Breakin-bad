@@ -12,3 +12,4 @@ module.exports = {
 flags: {
   THE_FLAG: false
 }
+plugins: [`gatsby-plugin-sass`]
