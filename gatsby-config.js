@@ -11,19 +11,11 @@ module.exports = {
     {
       resolve: `gatsby-plugin-amp`,
       options: {
-        analytics: {
-          type: "gtag",
-          dataCredentials: "include",
-        },
-        config: {
-          url:
-            "https://www.googletagmanager.com/amp.json?id=GTM-5Z978VP&gtm.url=SOURCE_URL",
-        },
         canonicalBaseUrl: "https://breaking-bad-pi.vercel.app/",
         components: ["amp-form", "amp-img"],
         excludedPaths: ["/404*"],
         pathIdentifier: "/amp/",
-        relAmpHtmlPattern: "{{canonicalBaseUrl}}{{pathname}}{{pathIdentifier}}",
+        relAmpHtmlPattern: "{{canonicalBaseUrl}}{{pathIdentifier}}",
         useAmpClientIdApi: true,
       },
     },

@@ -18,7 +18,7 @@ exports.createPages = async ({ actions }) => {
   })
   data.forEach(char => {
     actions.createPage({
-      path: `/character/${char.char_id}/amp`,
+      path: `/amp/character/${char.char_id}`,
       component: charAmpTemplate,
       context: { char },
     })
