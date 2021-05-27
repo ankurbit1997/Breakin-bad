@@ -12,7 +12,7 @@ module.exports = {
       resolve: `gatsby-plugin-amp`,
       options: {
         canonicalBaseUrl: "https://breaking-bad-pi.vercel.app/",
-        components: ["amp-form", "amp-img"],
+        components: ["amp-form"],
         excludedPaths: ["/404*"],
         pathIdentifier: "/amp/",
         relAmpHtmlPattern: "{{canonicalBaseUrl}}{{pathIdentifier}}",
