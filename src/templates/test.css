@@ -1,3 +1,19 @@
 h2 {
-  color: blue;
+  color: red;
+  font-family: "Gilroy", Helvetica, Arial, sans-serif;
+}
+@font-face {
+  font-family: "Gilroy";
+  src: url("../fonts/Gilroy-ExtraBold.otf") format("truetype");
+  font-display: swap;
+  font-style: normal;
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Gilroy";
+  src: url("../fonts/Gilroy-Light.otf") format("truetype");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 200;
 }
